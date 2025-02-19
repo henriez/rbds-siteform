@@ -193,11 +193,11 @@
             });
         }
 
-        const apiUrl = 'http://mc.henriez.com.br:3000/string';
+        const apiUrl = 'http://ec2-15-228-128-25.sa-east-1.compute.amazonaws.com:3000/string';
         async function submitForm(event) {
             event.preventDefault();
             let value = document.getElementById('inputField').value;
-            if (value.length > 2) return;
+            if (value.length > 5) return;
             const messageDiv = document.getElementById('message');            
             try {
                 const res = await fetch(apiUrl, {
@@ -253,7 +253,7 @@
 
     <section id="about">
         <form onsubmit="submitForm(event)">
-            <input id="inputField" type="text" maxlength="2" required placeholder="Display string">
+            <input id="inputField" type="text" maxlength="5" required placeholder="Display string">
             <button type="submit">Submit</button>
             <div id="message"></div>
         </form>
